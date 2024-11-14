@@ -5,4 +5,8 @@ export class AppService {
   getHello(): string {
     return 'magician wonton.';
   }
+
+  getByte(): string {
+    return 'magician wontons????';
+  }
 }
