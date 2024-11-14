@@ -2,7 +2,7 @@ name: Deploy To Digital Ocean
 
 on:
   push:
-    branches: [dev]
+    branches: [develop]
 
 jobs:
   deploy:
@@ -17,8 +17,8 @@ jobs:
           key: ${{ secrets.DIGITAL_OCEAN_SSH_KEY }}
           script: |
             docker system prune --force
-            cd test/test-deploy
-            git checkout dev
+            cd dev/dummy-backed
+            git checkout develop
             git pull
             echo "${{ vars.ENVIROMENT_VARIABLES }}" > .env
             docker-compose down
