@@ -10,7 +10,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('byte')
+  @Get('bye')
   getByte(): string {
     return this.appService.getByte();
   }
