@@ -37,6 +37,6 @@ jobs:
           username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
           key: ${{ secrets.DIGITAL_OCEAN_SSH_KEY }}
           script: |
-            docker load -i /root/images/dummy-server.tar
+            docker load -i /home/cdplayer/images/dummy-server.tar
             docker rm -f dummy-server
             docker run -dp 4000:4000 --name dummy-server dummy-server:${{ github.sha }}
