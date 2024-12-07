@@ -46,6 +46,6 @@ jobs:
         if: github.ref == 'refs/heads/develop'
         uses: dokku/github-action@master
         with:
-          git_remote_url: 'ssh://dokku@dummy.rollinggates.work:22/dummy'
+          git_remote_url: 'ssh://dokku@git.rollinggates.work:22/dummy-master'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           deploy_docker_image: softorca/dummy-backed:${{ github.sha }}
