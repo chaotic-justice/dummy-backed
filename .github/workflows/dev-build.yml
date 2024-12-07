@@ -31,11 +31,11 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ github.repository }}:${{ github.sha }}
+          tags: dummy-backed:${{ github.sha }}
 
       - name: Push to dokku
         uses: dokku/github-action@master
         with:
           git_remote_url: 'ssh://dokku@dummy.rollinggates.work:22/dummy'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          deploy_docker_image: ${{ github.repository }}:${{ github.sha }}
+          deploy_docker_image: dummy-backed:${{ github.sha }}
